@@ -6,9 +6,15 @@ from langchain_huggingface import HuggingFaceEndpoint
 from fpdf import FPDF
 from docx import Document
 import io
+import os
+
+os.environ["api_key"] = st.secrets["api_key"]
+
+
 
 model_name = "facebook/bart-large-cnn"
-llm = HuggingFaceHub(repo_id=model_name, huggingfacehub_api_token="api_key")
+llm = HuggingFaceHub(repo_id=model_name, huggingfacehub_api_token=st.secrets["api_key"])
+
 
 
 st.title("Text Summarizer")
