@@ -9,8 +9,7 @@ import io
 
 
 model_name = "facebook/bart-large-cnn"
-api_key=st.secrets["api_key"]
-llm = HuggingFaceHub(repo_id=model_name, huggingfacehub_api_token="api_key")
+llm = HuggingFaceHub(repo_id=model_name, huggingfacehub_api_token=st.secrets["api_key"])
 
 
 
